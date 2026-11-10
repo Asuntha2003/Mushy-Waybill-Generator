@@ -22,12 +22,12 @@ jobs:
         run: |
           python -m pip install reportlab pyinstaller
 
-      - name: Build EXE
+      - name: Build application
         run: |
-          pyinstaller --noconfirm --clean --onefile --windowed --name MushyWaybill waybill.py
+          pyinstaller --noconfirm --clean --onedir --windowed --name MushyWaybill waybill.py
 
-      - name: Upload EXE
+      - name: Upload application
         uses: actions/upload-artifact@v4
         with:
-          name: MushyWaybill-Windows
-          path: dist/MushyWaybill.exe
+          name: MushyWaybill-Windows-v2
+          path: dist/MushyWaybill/
